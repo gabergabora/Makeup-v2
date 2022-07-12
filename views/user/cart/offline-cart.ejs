@@ -1,0 +1,164 @@
+<%- include("../../layout/navbar") -%>
+
+  <div class="cart">
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">الاسم</th>
+          <th scope="col">الماركة</th>
+          <th scope="col">العدد</th>
+          <th scope="col">سعر القطعة الواحدة</th>
+          <th scope="col">السعر النهائي</th>
+          <th scope="col">حذف</th>
+        </tr>
+      </thead>
+      <tbody id="container">
+        <tr id="card-template" style="display:none">
+          <td><img src=""></td>
+          <td></td>
+          <td></td>
+          <td class="qty">
+            <span name="qty"></span>
+            <div class="btns-qty">
+              <button>+</button>
+              <button>-</button>
+            </div>
+          </td>
+          <td></td>
+          <td id="price"></td>
+          <td>
+            <button class="delete">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="20" height="20"
+                viewBox="0 0 24 24" stroke-width="2" stroke="#000000" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <line x1="4" y1="7" x2="20" y2="7" />
+                <line x1="10" y1="11" x2="10" y2="17" />
+                <line x1="14" y1="11" x2="14" y2="17" />
+                <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+              </svg>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <form onsubmit="checkout()" id="checkout-form">
+      <div class="info">
+        <div class="inputs">
+        <input type="text" name="name" placeholder="الاسم" required>
+        <input type="text" name="location" placeholder="المحافظة" required>
+        <input type="text" name="area" placeholder="المنطقة" required>
+        <input type="text" name="number" placeholder="رقم الهاتف" required>
+      </div>
+      <br>
+      <center>
+        <button type="submit" class="checout">تاكيد الشراء <svg xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-ambulance" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <circle cx="7" cy="17" r="2" />
+            <circle cx="17" cy="17" r="2" />
+            <path d="M5 17h-2v-11a1 1 0 0 1 1 -1h9v12m-4 0h6m4 0h2v-6h-8m0 -5h5l3 5" />
+            <path d="M6 10h4m-2 -2v4" />
+          </svg></button>
+        </center>
+      </div>
+    </form>
+  </div>
+  <%- include("../../layout/footer") -%>
+
+    <script>
+      const container = document.querySelector('#container');
+      const cardTemplate = document.querySelector('#card-template');
+      const checkoutForm = document.querySelector('#checkout-form');
+      var size = localStorage.getItem('size')
+      const createItemsCard = (data) => {
+        for (let i = 0; i < data.length; i++) {
+          const clone = cardTemplate.cloneNode(cardTemplate, true);
+          const { price, qty, image, name, brand, _id } = data[i]
+          clone.style.display = "table-row"
+          clone.id = _id;
+          clone.children[0].firstChild.src = `/upload/images/${image}`;
+          clone.children[1].textContent = name + `(${size})`
+          clone.children[2].textContent = brand
+          clone.children[3].children[0].textContent = qty;
+          clone.children[3].children[1].children[0].value = i;
+          clone.children[3].children[1].children[1].value = i;
+          clone.children[3].children[1].children[0].onclick = e => updateQty(e, "incress");
+          clone.children[3].children[1].children[1].onclick = e => updateQty(e, "decress");
+          clone.children[4].textContent = price;
+          clone.children[5].textContent = qty * price;
+          clone.children[6].id = i;
+          clone.children[6].onclick = deleteProduct;
+          container.appendChild(clone);
+        }
+      };
+
+      fetch("http://localhost:3000/cart/offline", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "items": localStorage.getItem("cart_products"),
+        }
+      })
+        .then(res => res.json())
+        .then(res => {
+          createItemsCard(res);
+        })
+        .catch(err => console.log(err));
+
+      const updateQty = (e, type) => {
+        const index = e.target.value;
+        const qtySpan = e.target.closest('td').children[0];
+        const products = JSON.parse(localStorage.getItem("cart_products"));
+        const product = products[index];
+        if (type === 'incress') {
+          product.qty++;
+          qtySpan.textContent = product.qty;
+        } else {
+          if (product.qty <= 1) return;
+          product.qty--;
+          qtySpan.textContent = product.qty;
+        }
+        localStorage.setItem("cart_products", JSON.stringify(products));
+      };
+      const deleteProduct = e => {
+        const index = e.target.closest('td').id;
+        const parent = e.target.closest('tr');
+        const products = JSON.parse(localStorage.getItem("cart_products"));
+        products.splice(index, 1);
+        localStorage.setItem("cart_products", JSON.stringify(products));
+        container.removeChild(parent);
+      }
+      console.log(document.querySelectorAll("form input"))
+      const checkout = e => {
+       
+        const inputs = document.querySelectorAll('form input');
+        let formData = []
+        for (let i = 0; i < inputs.length; i++) {
+          const { name, value } = inputs[i];
+          formData.push({name, value});
+        }
+        const data = {
+          items:JSON.parse(localStorage.getItem('cart_products')),
+          formData,
+        }
+        fetch("http://localhost:3000/cart/offline-order", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body:JSON.stringify(data),
+          
+        })
+          .then(res => res.json())
+          .then(res => {
+            createItemsCard(res);
+          })
+          .catch(err => console.log(err));
+          localStorage.clear();
+      }
+    </script>

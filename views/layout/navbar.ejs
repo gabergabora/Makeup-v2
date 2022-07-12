@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>بوتيك الخاتونة</title>
+</head>
+
+<body id="body">
+    <nav class="CustomNav">
+        <div class="nav-content">
+            <!-- NAVBAR ICONS: Font-size: 20px, Stroke: 2px, Color: #fff -->
+            <div class="main">
+                <button class="menu-btn" onclick="openNav()"><svg xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-menu-2" width="28" height="28" viewBox="0 0 24 24"
+                        stroke-width="2" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <line x1="4" y1="6" x2="20" y2="6" />
+                        <line x1="4" y1="12" x2="20" y2="12" />
+                        <line x1="4" y1="18" x2="20" y2="18" />
+                    </svg></button>
+                <img id="nav-img" src="/images/logo.png">
+                <a id="title" class="title" href="/">بوتيك الخاتونة</a>
+
+
+                <a class="mynav-link" href="/"><svg xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-home" width="20" height="20" viewBox="0 0 24 24"
+                        stroke-width="2" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <polyline points="5 12 3 12 12 3 21 12 19 12" />
+                        <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+                        <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+                    </svg> الصفحة الرئيسية</a>
+
+                <a class="mynav-link" href="/brand"><svg xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-geometry" width="20" height="20" viewBox="0 0 24 24"
+                        stroke-width="2" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M7 21l4 -12m2 0l1.48 4.439m.949 2.847l1.571 4.714" />
+                        <circle cx="12" cy="7" r="2" />
+                        <path d="M4 12c1.526 2.955 4.588 5 8 5c3.41 0 6.473 -2.048 8 -5" />
+                        <path d="M12 5v-2" />
+                    </svg> الماركات</a>
+
+                <a class="mynav-link" href="/cart"><svg xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-shopping-cart" width="20" height="20" viewBox="0 0 24 24"
+                        stroke-width="2" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <circle cx="6" cy="19" r="2" />
+                        <circle cx="17" cy="19" r="2" />
+                        <path d="M17 17h-11v-14h-2" />
+                        <path d="M6 5l14 1l-1 7h-13" />
+                    </svg> سلة التسوق</a>
+
+                <%if(!userDATA){%>
+                    <a class="mynav-link" href="/api/login"><svg xmlns="http://www.w3.org/2000/svg"
+                            class="icon icon-tabler icon-tabler-lock-open" width="20" height="20" viewBox="0 0 24 24"
+                            stroke-width="2" stroke="#fff" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <rect x="5" y="11" width="14" height="10" rx="2" />
+                            <circle cx="12" cy="16" r="1" />
+                            <path d="M8 11v-5a4 4 0 0 1 8 0" />
+                        </svg> تسجيل دخول</a>
+
+                    <a class="mynav-link" href="/api/register"><svg xmlns="http://www.w3.org/2000/svg"
+                            class="icon icon-tabler icon-tabler-user-plus" width="20" height="20" viewBox="0 0 24 24"
+                            stroke-width="2" stroke="#fff" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                            <path d="M16 11h6m-3 -3v6" />
+                        </svg> انشاء حساب</a>
+                    <%}%>
+
+                        <%if(userDATA){%>
+                            <%if(userDATA.isAdmin == true){%>
+                                <a class="mynav-link" href="/admin/category/main"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-settings" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                  </svg> لوحة التحكم</a>
+                                <%}%>
+                            <a class="mynav-link" href="/api/logout"><svg xmlns="http://www.w3.org/2000/svg"
+                                    class="icon icon-tabler icon-tabler-logout" width="20" height="20"
+                                    viewBox="0 0 24 24" stroke-width="2" stroke="#fff" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path
+                                        d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />
+                                    <path d="M7 12h14l-3 -3m0 6l3 -3" />
+                                </svg> تسجيل خروج</a>
+                            <%}%>
+
+                                <div id="mySidenav" class="sidenav">
+                                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                                    <a class="mynav-link" href="/"><svg xmlns="http://www.w3.org/2000/svg"
+                                            class="icon icon-tabler icon-tabler-home" width="20" height="20"
+                                            viewBox="0 0 24 24" stroke-width="2" stroke="#fff" fill="none"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <polyline points="5 12 3 12 12 3 21 12 19 12" />
+                                            <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+                                            <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+                                        </svg> الصفحة الرئيسية</a>
+
+                                    <a class="" href="/brand"><svg xmlns="http://www.w3.org/2000/svg"
+                                            class="icon icon-tabler icon-tabler-geometry" width="20" height="20"
+                                            viewBox="0 0 24 24" stroke-width="2" stroke="#fff" fill="none"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path d="M7 21l4 -12m2 0l1.48 4.439m.949 2.847l1.571 4.714" />
+                                            <circle cx="12" cy="7" r="2" />
+                                            <path d="M4 12c1.526 2.955 4.588 5 8 5c3.41 0 6.473 -2.048 8 -5" />
+                                            <path d="M12 5v-2" />
+                                        </svg> الماركات</a>
+
+                                        <a class="mynav-link" href="/cart"><svg xmlns="http://www.w3.org/2000/svg"
+                                            class="icon icon-tabler icon-tabler-shopping-cart" width="20" height="20" viewBox="0 0 24 24"
+                                            stroke-width="2" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <circle cx="6" cy="19" r="2" />
+                                            <circle cx="17" cy="19" r="2" />
+                                            <path d="M17 17h-11v-14h-2" />
+                                            <path d="M6 5l14 1l-1 7h-13" />
+                                        </svg> سلة التسوق</a>
+
+
+
+                                    <% if(!userDATA){%>
+                                        <a class="" href="/api/login"><svg xmlns="http://www.w3.org/2000/svg"
+                                                class="icon icon-tabler icon-tabler-lock-open" width="20" height="20"
+                                                viewBox="0 0 24 24" stroke-width="2" stroke="#fff" fill="none"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                <rect x="5" y="11" width="14" height="10" rx="2" />
+                                                <circle cx="12" cy="16" r="1" />
+                                                <path d="M8 11v-5a4 4 0 0 1 8 0" />
+                                            </svg> تسجيل دخول</a>
+
+                                        <a class="" href="/api/register"><svg xmlns="http://www.w3.org/2000/svg"
+                                                class="icon icon-tabler icon-tabler-user-plus" width="20" height="20"
+                                                viewBox="0 0 24 24" stroke-width="2" stroke="#fff" fill="none"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                <circle cx="9" cy="7" r="4" />
+                                                <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                                                <path d="M16 11h6m-3 -3v6" />
+                                            </svg> انشاء حساب</a>
+                                        <%}%>
+
+                                            <%if(userDATA){%>
+                                                <%if(userDATA.isAdmin == true){%>
+                                                    <a class="mynav-link" href="/admin/category/main"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-settings" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                                        <path d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z" />
+                                                        <circle cx="12" cy="12" r="3" />
+                                                      </svg> لوحة التحكم</a>
+                                                    <%}%>
+                                                    <a class="mynav-link" href="/cart"><svg xmlns="http://www.w3.org/2000/svg"
+                                                        class="icon icon-tabler icon-tabler-shopping-cart" width="20" height="20" viewBox="0 0 24 24"
+                                                        stroke-width="2" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                        <circle cx="6" cy="19" r="2" />
+                                                        <circle cx="17" cy="19" r="2" />
+                                                        <path d="M17 17h-11v-14h-2" />
+                                                        <path d="M6 5l14 1l-1 7h-13" />
+                                                    </svg> سلة التسوق</a>
+                                                        <a class="mynav-link" href="/api/logout"><svg
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                class="icon icon-tabler icon-tabler-logout" width="20"
+                                                                height="20" viewBox="0 0 24 24" stroke-width="2"
+                                                                stroke="#fff" fill="none" stroke-linecap="round"
+                                                                stroke-linejoin="round">
+                                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                                <path
+                                                                    d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />
+                                                                <path d="M7 12h14l-3 -3m0 6l3 -3" />
+                                                            </svg> تسجيل خروج</a>
+                                                        <%}%>
+                                </div>
+            </div>
+        </div>
+
+        <script>
+            function openNav() {
+                document.getElementById("mySidenav").style.width = "230px";
+                document.getElementById("nav-img").style.margin = "0 170px 0 0";
+                document.getElementById("body").style.margin = "0 0 0 -230px";
+                document.getElementById("body").style.width = "100%"
+            }
+
+            function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+                document.getElementById("nav-img").style.margin = "0 50px 0 0";
+            }
+        </script>
+    </nav>

@@ -1,0 +1,13 @@
+<%- include("../../layout/admin-navbar") -%>
+
+<p class="order-title">سجل الفواتير</p>
+    <div class="pending-orders">
+        <br>
+        <% orders.forEach(data => {%>
+            <div class="folders" onclick="window.location.href='/admin/bills/get/<%= data.id%>'">
+                <ion-icon class="folder icon" name="folder"></ion-icon>
+                <p class="order-name"><%= data.name%> - <%= data.Date%></p>
+            </div>
+        <%}) %>
+    </div>
+    <%- include("../../layout/footer") -%>

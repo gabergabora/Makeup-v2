@@ -1,0 +1,720 @@
+<%- include("../layout/navbar") -%>
+
+    <div class="register">
+
+        <div class="panel">
+            <form action="/api/register" method="post">
+                <p>
+                    <ion-icon name="person-circle"></ion-icon>
+                </p>
+                <p>انشاء حساب</p>
+                <label for=""><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user"
+                        width="32" height="32" viewBox="0 0 24 24" stroke-width="2.5" stroke="#fff" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <circle cx="12" cy="7" r="4" />
+                        <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                    </svg></label> <input type="text" name="name" placeholder="الاسم">
+
+                <br>
+
+                <label for=""><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail"
+                        width="32" height="32" viewBox="0 0 24 24" stroke-width="2.5" stroke="#fff" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <rect x="3" y="5" width="18" height="14" rx="2" />
+                        <polyline points="3 7 12 13 21 7" />
+                    </svg></label> <input type="email" name="email" placeholder="البريد الالكتروني">
+
+                <br>
+
+                <label for=""><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-phone-call"
+                        width="32" height="32" viewBox="0 0 24 24" stroke-width="2.5" stroke="#fff" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path
+                            d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
+                        <path d="M15 7a2 2 0 0 1 2 2" />
+                        <path d="M15 3a6 6 0 0 1 6 6" />
+                    </svg></label> <input type="number" name="phone" placeholder="رقم الهاتف">
+
+                    <br>
+
+                    <label for=""><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-2" width="32" height="32" viewBox="0 0 24 24" stroke-width="2.5" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <line x1="18" y1="6" x2="18" y2="6.01" />
+                        <path d="M18 13l-3.5 -5a4 4 0 1 1 7 0l-3.5 5" />
+                        <polyline points="10.5 4.75 9 4 3 7 3 20 9 17 15 20 21 17 21 15" />
+                        <line x1="9" y1="4" x2="9" y2="17" />
+                        <line x1="15" y1="15" x2="15" y2="20" />
+                      </svg></label> <input type="text" name="location" class="location" placeholder="المحافظة">
+                      <input type="text" name="area" class="location" placeholder="المنطقة">
+
+                <br>
+
+                <label for=""><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-lock"
+                        width="32" height="32" viewBox="0 0 24 24" stroke-width="2.5" stroke="#fff" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <rect x="5" y="11" width="14" height="10" rx="2" />
+                        <circle cx="12" cy="16" r="1" />
+                        <path d="M8 11v-4a4 4 0 0 1 8 0v4" />
+                    </svg></label> <input type="password" name="password" placeholder="الرمز السري">
+
+                <br>
+
+                <button><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="44" height="44" viewBox="0 0 24 24" stroke-width="2.5" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M5 12l5 5l10 -10" />
+                  </svg></button>
+            </form>
+        </div>
+
+        <svg class="animated" id="freepik_stories-skincare" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"
+            version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs">
+            <style>
+                svg#freepik_stories-skincare:not(.animated) .animable {
+                    opacity: 0;
+                }
+
+                svg#freepik_stories-skincare.animated #freepik--background-simple--inject-2 {
+                    animation: 1.5s Infinite linear floating;
+                    animation-delay: 0s;
+                }
+
+                svg#freepik_stories-skincare.animated #freepik--Character--inject-2 {
+                    animation: 6s Infinite linear wind;
+                    animation-delay: 0s;
+                }
+
+                svg#freepik_stories-skincare.animated #freepik--Bottles--inject-2 {
+                    animation: 3s Infinite linear heartbeat;
+                    animation-delay: 0s;
+                }
+
+                svg#freepik_stories-skincare.animated #freepik--Plant--inject-2 {
+                    animation: 1.5s Infinite linear wind;
+                    animation-delay: 0s;
+                }
+
+                @keyframes floating {
+                    0% {
+                        opacity: 1;
+                        transform: translateY(0px);
+                    }
+
+                    50% {
+                        transform: translateY(-10px);
+                    }
+
+                    100% {
+                        opacity: 1;
+                        transform: translateY(0px);
+                    }
+                }
+
+                @keyframes wind {
+                    0% {
+                        transform: rotate(0deg);
+                    }
+
+                    25% {
+                        transform: rotate(1deg);
+                    }
+
+                    75% {
+                        transform: rotate(-1deg);
+                    }
+                }
+
+                @keyframes heartbeat {
+                    0% {
+                        transform: scale(1);
+                    }
+
+                    10% {
+                        transform: scale(1.1);
+                    }
+
+                    30% {
+                        transform: scale(1);
+                    }
+
+                    40% {
+                        transform: scale(1);
+                    }
+
+                    50% {
+                        transform: scale(1.1);
+                    }
+
+                    60% {
+                        transform: scale(1);
+                    }
+
+                    100% {
+                        transform: scale(1);
+                    }
+                }
+            </style>
+            <g id="freepik--background-simple--inject-2" class="animable" style="transform-origin: 252.26px 246.086px;">
+                <path
+                    d="M175.36,438.93s75.8,27,149.32-16.16S434.5,294.14,465.73,225.66,477.6,87.56,420.66,55.87,325.86,71,246.56,73.38s-100.77-9-166,36.18S4.75,261.44,57.67,340.3,175.36,438.93,175.36,438.93Z"
+                    style="fill: rgb(244, 218, 203); transform-origin: 252.26px 246.086px;" id="elf5rjhan560a"
+                    class="animable"></path>
+                <g id="el6vxh3whnvvn">
+                    <path
+                        d="M175.36,438.93s75.8,27,149.32-16.16S434.5,294.14,465.73,225.66,477.6,87.56,420.66,55.87,325.86,71,246.56,73.38s-100.77-9-166,36.18S4.75,261.44,57.67,340.3,175.36,438.93,175.36,438.93Z"
+                        style="fill: rgb(255, 255, 255); opacity: 0.7; transform-origin: 252.26px 246.086px;"
+                        class="animable"></path>
+                </g>
+            </g>
+            <g id="freepik--Wall--inject-2" class="animable" style="transform-origin: 254.49px 321px;">
+                <rect x="47.6" y="201.8" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 63.6px 217.8px;"
+                    id="elwtalvd76x1e" class="animable"></rect>
+                <rect x="82.31" y="201.8" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 98.31px 217.8px;"
+                    id="elf10gcqecrct" class="animable"></rect>
+                <rect x="117.02" y="201.8" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 133.02px 217.8px;"
+                    id="elqrhn0bn3u8" class="animable"></rect>
+                <rect x="151.72" y="201.8" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 167.72px 217.8px;"
+                    id="elgnpujvmob34" class="animable"></rect>
+                <rect x="186.43" y="201.8" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 202.43px 217.8px;"
+                    id="el6nxsi7jv037" class="animable"></rect>
+                <rect x="221.14" y="201.8" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 237.14px 217.8px;"
+                    id="el0tlaq6p7ed59" class="animable"></rect>
+                <rect x="255.84" y="201.8" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 271.84px 217.8px;"
+                    id="el5z5zbbrxhx5" class="animable"></rect>
+                <rect x="290.55" y="201.8" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 306.55px 217.8px;"
+                    id="el1friw7v7bhli" class="animable"></rect>
+                <rect x="325.26" y="201.8" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 341.26px 217.8px;"
+                    id="el0pl9mwjek2s8" class="animable"></rect>
+                <rect x="359.96" y="201.8" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 375.96px 217.8px;"
+                    id="el0sw7n7briy8f" class="animable"></rect>
+                <rect x="394.67" y="201.8" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 410.67px 217.8px;"
+                    id="eluwz5fv29gx" class="animable"></rect>
+                <rect x="429.38" y="201.8" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 445.38px 217.8px;"
+                    id="elyklgamqn8y" class="animable"></rect>
+                <rect x="47.6" y="236" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 63.6px 252px;"
+                    id="eluhs31rt43qg" class="animable"></rect>
+                <rect x="82.31" y="236" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 98.31px 252px;"
+                    id="el562nlhm5pu7" class="animable"></rect>
+                <rect x="117.02" y="236" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 133.02px 252px;"
+                    id="elmz92hpvlud9" class="animable"></rect>
+                <rect x="151.72" y="236" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 167.72px 252px;"
+                    id="elesqehxbn82d" class="animable"></rect>
+                <rect x="186.43" y="236" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 202.43px 252px;"
+                    id="elcl3aetat5c" class="animable"></rect>
+                <rect x="221.14" y="236" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 237.14px 252px;"
+                    id="elb9ot2z1q3t" class="animable"></rect>
+                <rect x="255.84" y="236" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 271.84px 252px;"
+                    id="el3caj24adf9d" class="animable"></rect>
+                <rect x="290.55" y="236" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 306.55px 252px;"
+                    id="elgu59uxonf6m" class="animable"></rect>
+                <rect x="325.26" y="236" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 341.26px 252px;"
+                    id="el579re5eyz1e" class="animable"></rect>
+                <rect x="359.96" y="236" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 375.96px 252px;"
+                    id="elr240013qlk" class="animable"></rect>
+                <rect x="394.67" y="236" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 410.67px 252px;"
+                    id="els6y6m5wt35j" class="animable"></rect>
+                <rect x="429.38" y="236" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 445.38px 252px;"
+                    id="el3iu0t5z5qev" class="animable"></rect>
+                <rect x="47.6" y="270.2" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 63.6px 286.2px;"
+                    id="elozc79jbmmmj" class="animable"></rect>
+                <rect x="82.31" y="270.2" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 98.31px 286.2px;"
+                    id="elrijgs9i2t3" class="animable"></rect>
+                <rect x="117.02" y="270.2" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 133.02px 286.2px;"
+                    id="elvx9gmfz24o" class="animable"></rect>
+                <rect x="151.72" y="270.2" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 167.72px 286.2px;"
+                    id="el0w1uvq1ktq2n" class="animable"></rect>
+                <rect x="186.43" y="270.2" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 202.43px 286.2px;"
+                    id="eltg897hpxsi" class="animable"></rect>
+                <rect x="221.14" y="270.2" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 237.14px 286.2px;"
+                    id="elmvgmywyyf6" class="animable"></rect>
+                <rect x="255.84" y="270.2" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 271.84px 286.2px;"
+                    id="elkykay4iquze" class="animable"></rect>
+                <rect x="290.55" y="270.2" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 306.55px 286.2px;"
+                    id="elwymoi58e8f9" class="animable"></rect>
+                <rect x="325.26" y="270.2" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 341.26px 286.2px;"
+                    id="el9016p47n3sp" class="animable"></rect>
+                <rect x="359.96" y="270.2" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 375.96px 286.2px;"
+                    id="elx65q6qxn64" class="animable"></rect>
+                <rect x="394.67" y="270.2" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 410.67px 286.2px;"
+                    id="ely7v147joafa" class="animable"></rect>
+                <rect x="429.38" y="270.2" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 445.38px 286.2px;"
+                    id="elpju3vwbsid" class="animable"></rect>
+                <rect x="47.6" y="304.4" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 63.6px 320.4px;"
+                    id="elwixkb7iqfqn" class="animable"></rect>
+                <rect x="82.31" y="304.4" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 98.31px 320.4px;"
+                    id="elhk15w8qub05" class="animable"></rect>
+                <rect x="117.02" y="304.4" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 133.02px 320.4px;"
+                    id="elfx2ag2vnub" class="animable"></rect>
+                <rect x="151.72" y="304.4" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 167.72px 320.4px;"
+                    id="el9ummtvws3o" class="animable"></rect>
+                <rect x="186.43" y="304.4" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 202.43px 320.4px;"
+                    id="elwtfb3h3y3oq" class="animable"></rect>
+                <rect x="221.14" y="304.4" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 237.14px 320.4px;"
+                    id="elo3hc84j36he" class="animable"></rect>
+                <rect x="255.84" y="304.4" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 271.84px 320.4px;"
+                    id="elrxvttznz3mp" class="animable"></rect>
+                <rect x="290.55" y="304.4" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 306.55px 320.4px;"
+                    id="elj70q9h8muxr" class="animable"></rect>
+                <rect x="325.26" y="304.4" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 341.26px 320.4px;"
+                    id="elpjtsc1axlk" class="animable"></rect>
+                <rect x="359.96" y="304.4" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 375.96px 320.4px;"
+                    id="eltdrt7llirpd" class="animable"></rect>
+                <rect x="394.67" y="304.4" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 410.67px 320.4px;"
+                    id="el85srn9zofut" class="animable"></rect>
+                <rect x="429.38" y="304.4" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 445.38px 320.4px;"
+                    id="eliycmp26oij8" class="animable"></rect>
+                <rect x="47.6" y="339.8" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 63.6px 355.8px;"
+                    id="elxefvperkjbr" class="animable"></rect>
+                <rect x="82.31" y="339.8" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 98.31px 355.8px;"
+                    id="elcr6qg1sh7ig" class="animable"></rect>
+                <rect x="117.02" y="339.8" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 133.02px 355.8px;"
+                    id="elt5m3qt24va9" class="animable"></rect>
+                <rect x="151.72" y="339.8" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 167.72px 355.8px;"
+                    id="eluf8nsz9m3go" class="animable"></rect>
+                <rect x="186.43" y="339.8" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 202.43px 355.8px;"
+                    id="elft9j6w1fec" class="animable"></rect>
+                <rect x="221.14" y="339.8" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 237.14px 355.8px;"
+                    id="ellqgmsbccyqq" class="animable"></rect>
+                <rect x="255.84" y="339.8" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 271.84px 355.8px;"
+                    id="ellmympy5ajdr" class="animable"></rect>
+                <rect x="290.55" y="339.8" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 306.55px 355.8px;"
+                    id="el4tp04bnvxsk" class="animable"></rect>
+                <rect x="325.26" y="339.8" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 341.26px 355.8px;"
+                    id="elaf2z9a4iy4h" class="animable"></rect>
+                <rect x="359.96" y="339.8" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 375.96px 355.8px;"
+                    id="elxpdt55y6eft" class="animable"></rect>
+                <rect x="394.67" y="339.8" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 410.67px 355.8px;"
+                    id="elwsq0r7jwrt" class="animable"></rect>
+                <rect x="429.38" y="339.8" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 445.38px 355.8px;"
+                    id="elejhb9hf241k" class="animable"></rect>
+                <rect x="47.6" y="374" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 63.6px 390px;"
+                    id="elkqu3ht6y8w" class="animable"></rect>
+                <rect x="82.31" y="374" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 98.31px 390px;"
+                    id="el9ehh46iq228" class="animable"></rect>
+                <rect x="117.02" y="374" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 133.02px 390px;"
+                    id="elwtkfdhgh2hq" class="animable"></rect>
+                <rect x="151.72" y="374" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 167.72px 390px;"
+                    id="elij3iy45nrn" class="animable"></rect>
+                <rect x="186.43" y="374" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 202.43px 390px;"
+                    id="elqzpsco6kl1i" class="animable"></rect>
+                <rect x="221.14" y="374" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 237.14px 390px;"
+                    id="elhncj5oe8h7s" class="animable"></rect>
+                <rect x="255.84" y="374" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 271.84px 390px;"
+                    id="eld2a8jvaali" class="animable"></rect>
+                <rect x="290.55" y="374" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 306.55px 390px;"
+                    id="elcm361puvmd" class="animable"></rect>
+                <rect x="325.26" y="374" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 341.26px 390px;"
+                    id="elkt2sv6cigl8" class="animable"></rect>
+                <rect x="359.96" y="374" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 375.96px 390px;"
+                    id="ellnssinm5tgs" class="animable"></rect>
+                <rect x="394.67" y="374" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 410.67px 390px;"
+                    id="ela509zrqbbit" class="animable"></rect>
+                <rect x="429.38" y="374" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 445.38px 390px;"
+                    id="elf3vvcvc4ach" class="animable"></rect>
+                <rect x="47.6" y="408.2" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 63.6px 424.2px;"
+                    id="elwfpktvy0qo" class="animable"></rect>
+                <rect x="82.31" y="408.2" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 98.31px 424.2px;"
+                    id="eljv4niwlqcn" class="animable"></rect>
+                <rect x="117.02" y="408.2" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 133.02px 424.2px;"
+                    id="el9quvam19uzv" class="animable"></rect>
+                <rect x="151.72" y="408.2" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 167.72px 424.2px;"
+                    id="ell72rvvi9ziq" class="animable"></rect>
+                <rect x="186.43" y="408.2" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 202.43px 424.2px;"
+                    id="ellqry2aivcrq" class="animable"></rect>
+                <rect x="221.14" y="408.2" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 237.14px 424.2px;"
+                    id="eldk4wenhuaej" class="animable"></rect>
+                <rect x="255.84" y="408.2" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 271.84px 424.2px;"
+                    id="elx8zd2whshf" class="animable"></rect>
+                <rect x="290.55" y="408.2" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 306.55px 424.2px;"
+                    id="el7suc9fxef42" class="animable"></rect>
+                <rect x="325.26" y="408.2" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 341.26px 424.2px;"
+                    id="elog5n8qzrtec" class="animable"></rect>
+                <rect x="359.96" y="408.2" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 375.96px 424.2px;"
+                    id="elwjmtb3wk9de" class="animable"></rect>
+                <rect x="394.67" y="408.2" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 410.67px 424.2px;"
+                    id="elq4fkuibcz9" class="animable"></rect>
+                <rect x="429.38" y="408.2" width="32" height="32" rx="4.13"
+                    style="fill: none; stroke: rgb(148, 148, 148); stroke-linecap: round; stroke-linejoin: round; transform-origin: 445.38px 424.2px;"
+                    id="elvem3r2rnic" class="animable"></rect>
+            </g>
+            <g id="freepik--Character--inject-2" class="animable" style="transform-origin: 248.701px 258.34px;">
+                <path
+                    d="M362.69,102s16,32,20,48-1.33,38.67-1.33,44,9.33,41.34,14.66,50,4.67,13.34,4.67,13.34-14.67,7.33-22.67,10L370,270s-22-38.66-23.33-50,8-41.33,9.33-64.66S356,88,362.69,102Z"
+                    style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 373.628px 184.654px;"
+                    id="el1wditw1hvmb" class="animable"></path>
+                <path
+                    d="M256.41,218.81s-12,3.62-16.3,7.25-43.83,67.74-46,73.17,4,18.47,13.4,26.8,15.22,33.33,15.22,33.33L197.37,449.2H375.59c.74-4.33-2.14-18.85-20.65-44.56-8-11.07-13.4-18.47-13.4-18.47l2.54-7.61s10.86-7.25,18.47-29.34,12.32-50.35,13.4-63,1.81-33-4-45.28-21-15.22-21-15.22-48.18-8.33-52.89-9.41S256.41,218.81,256.41,218.81Z"
+                    style="fill: rgb(244, 218, 203); stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 285.183px 332.653px;"
+                    id="eltifulnj94pg" class="animable"></path>
+                <polygon points="242.01 375.24 237.15 449.18 244.93 449.18 246.39 375.24 242.01 375.24"
+                    style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 241.77px 412.21px;"
+                    id="el0jn4ab44u2gw" class="animable"></polygon>
+                <polygon points="248.68 375.24 251.26 449.18 259.04 449.18 253.05 375.24 248.68 375.24"
+                    style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 253.86px 412.21px;"
+                    id="elo40yii1zjnc" class="animable"></polygon>
+                <path d="M328.61,421.13c.18,1.89.3,3.77.36,5.59"
+                    style="fill: none; stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 328.79px 423.925px;"
+                    id="elp37togo5csb" class="animable"></path>
+                <path d="M321.75,388.06a205,205,0,0,1,6.09,26.82"
+                    style="fill: none; stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 324.795px 401.47px;"
+                    id="elwq49h7fbsv9" class="animable"></path>
+                <path d="M309.64,402.5c.29,10,.17,23.37-1.8,33.49"
+                    style="fill: none; stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 308.799px 419.245px;"
+                    id="elo4e4jiwsfui" class="animable"></path>
+                <path d="M308.87,388.06s.27,3,.51,7.76"
+                    style="fill: none; stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 309.125px 391.94px;"
+                    id="el35fqa3r3cjs" class="animable"></path>
+                <path d="M316.08,379.82A164.46,164.46,0,0,0,330.52,369"
+                    style="fill: none; stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 323.3px 374.41px;"
+                    id="elnqgdeayf3q" class="animable"></path>
+                <path
+                    d="M344.08,378.56s-17.72,3.75-42.39.75S274,375.64,274,375.64s1,5.33,13,7.33,22.37,5.39,54.52,3.2C341.54,386.17,346.13,383.48,344.08,378.56Z"
+                    style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 309.304px 381.26px;"
+                    id="elds9kdm07738" class="animable"></path>
+                <path
+                    d="M215.69,283S196,290.64,190,293.64s-8.66,15.33-8,23,5,37.33,5,42.67,7,9,14.67,10.66,22.33,3.67,28,1.34,10.18-12.6,10.42-26.8S235,304,233.36,293.31,215.69,283,215.69,283Z"
+                    style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 211px 327.683px;"
+                    id="elypsgau4inhb" class="animable"></path>
+                <path
+                    d="M232.14,221.71s-13.76-12-14.85-13.4.36-4.71.36-4.71,10.15-11.23,10.15-13.41-2.9-1.08-5.07.73c0,0,1.44-4.71-.37-4.71s-5.76,3.3-8,5.12a12.16,12.16,0,0,0-3.23,5.06s.37-8.37-2.17-7.28-3.26,7.6-4.35,11.23-4,13.76-4,13.76l2.17,5.07-5.43-4s-.73-13-1.09-15.58-3.62-1.45-3.62,5.8a101.32,101.32,0,0,0,1.45,16.66c.36,1.45,24.27,19.2,26.08,21a50.09,50.09,0,0,0,6.52,4.71s-5.07,16.3-9.42,27.17-9.78,23.91-11.23,32.24,6.52,23.54,7.61,25.35,10.5,9.42,14.85,1.09,9.42-44.92,11.23-60.49,2.9-27.17,4-31.88-.36-20.65-1.81-24.27-8.06-5-10.23-9.69-5-9.87-6.43-5.16.36,6.52,1.81,9.78S232.14,221.71,232.14,221.71Z"
+                    style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 218.378px 261.822px;"
+                    id="elaivnzqe7hns" class="animable"></path>
+                <path d="M211.13,196.39a40.35,40.35,0,0,1-.72,6.48c-.73,4-1.45,8.7-1.45,8.7l4.71,5.79"
+                    style="fill: none; stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 211.315px 206.875px;"
+                    id="el01byal7yxit2" class="animable"></path>
+                <path d="M222.73,190.92s-2.48,2.94-3.74,4.48-3.65,3.93-3.65,3.93-2.11,9.4-2.11,9.83,3.93,4.77,3.93,4.77"
+                    style="fill: none; stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 217.98px 202.425px;"
+                    id="elooyhzsyyiug" class="animable"></path>
+                <line x1="202.8" y1="219.17" x2="207.36" y2="222.64"
+                    style="fill: none; stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 205.08px 220.905px;"
+                    id="elxopdw8zg9m" class="animable"></line>
+                <line x1="207.69" y1="223.97" x2="219.02" y2="213.97"
+                    style="fill: none; stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 213.355px 218.97px;"
+                    id="elglpb4dp8x1m" class="animable"></line>
+                <path d="M225.36,230.31s9.33,4.33,9.66,10.33-2.66,8-2.66,8"
+                    style="fill: none; stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 230.203px 239.475px;"
+                    id="el149hdlte4d3f" class="animable"></path>
+                <path
+                    d="M277.06,213s-18.47,2.89-20.65,5.79-3.62,34.78-4,58,2.9,37,2.9,37l-15.22,30.79,7.25,5.07s63.75-63.75,72.81-76.43,35.5-42.75,35.5-46-17.39-9.42-23.19-10.86-15.21-1.45-25.35-2.54S277.06,213,277.06,213Z"
+                    style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 297.87px 281.31px;"
+                    id="elc9p92sytoxt" class="animable"></path>
+                <line x1="270.91" y1="295.89" x2="255.33" y2="313.72"
+                    style="fill: none; stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 263.12px 304.805px;"
+                    id="el657713nj9oq" class="animable"></line>
+                <path
+                    d="M255.31,104.94s-16.44,19.82-16.44,26.56,0,17.28-2.52,21.08-12.23,8-10.12,12.64A9.94,9.94,0,0,0,233,170.7s6.33,22.34,9.7,27.82,11,6.32,14.33,5.48,11.38-5.48,11.38-5.48,10.12,19.81,10.54,22.76-9.7,61.12-9.7,67,1.69,7.59,1.69,7.59,44.68-62.81,49.32-68.71,8.43-10.11,8.43-10.11-10.54-13.91-14.33-24-5.06-13.07-2.95-16,5.47-7.58,5.47-7.58-33.29-38.78-44.25-52.69S259.11,99.89,255.31,104.94Z"
+                    style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 277.311px 199.256px;"
+                    id="el303ravbubv4" class="animable"></path>
+                <polygon points="268.38 198.52 282.02 189.31 272.69 204.64 268.38 198.52"
+                    style="fill: rgb(38, 50, 56); stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 275.2px 196.975px;"
+                    id="el049uhtyaofei" class="animable"></polygon>
+                <line x1="249.69" y1="145.35" x2="248.24" y2="149.11"
+                    style="fill: none; stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-miterlimit: 10; transform-origin: 248.965px 147.23px;"
+                    id="eltvywixr7q2" class="animable"></line>
+                <path d="M257.8,149.69s-9,2.61-13.61-1.45"
+                    style="fill: none; stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 2px; transform-origin: 250.995px 149.378px;"
+                    id="elewy10lod74e" class="animable"></path>
+                <path
+                    d="M256.41,103.68a10.32,10.32,0,0,0-1.1,1.26s-3.4,4.11-7.11,9.22c4.28,4,15.3,14.06,19.34,16.07C272.33,132.63,258.58,107.4,256.41,103.68Z"
+                    style="fill: rgb(38, 50, 56); transform-origin: 258.373px 117.035px;" id="elufm0ytqmgk"
+                    class="animable"></path>
+                <path d="M300,162.27s3.45,9.81,6.83,12.82,6,0,9.4-4.52.75-10.15-.75-10.15-15.42-3-15.42-3Z"
+                    style="fill: rgb(38, 50, 56); stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 308.943px 166.861px;"
+                    id="elzcnwcgekmw" class="animable"></path>
+                <path d="M286.08,165.64s2.11,8,8,5.9,5.9-9.27,5.9-9.27"
+                    style="fill: none; stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 293.03px 167.081px;"
+                    id="el4ese99fyzk7" class="animable"></path>
+                <path d="M245.63,139s5.8-4.92,10.72.87"
+                    style="fill: none; stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 2px; transform-origin: 250.99px 138.46px;"
+                    id="elpbbnu0dkvop" class="animable"></path>
+                <path
+                    d="M250.85,153.31c0,1.84-.58,3.33-1.3,3.33s-1.31-1.49-1.31-3.33.59-3.33,1.31-3.33S250.85,151.47,250.85,153.31Z"
+                    style="fill: rgb(38, 50, 56); transform-origin: 249.545px 153.31px;" id="el69yq06gepdb"
+                    class="animable"></path>
+                <path d="M236.37,176.92s4.34,3.18,9-4.06"
+                    style="fill: none; stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-miterlimit: 10; transform-origin: 240.87px 175.238px;"
+                    id="elxerpewmc1ee" class="animable"></path>
+                <path
+                    d="M247.73,101.15s15.17,27,22.34,37.09,40.46,30.77,43,32.88,8.85.84,10.54-.42,19-7.17,24.45-18.55,11-39.62,4.21-53.53-26.55-21.5-38.36-22.76a59.73,59.73,0,0,0-20.65,1.26s-5.48-2.1-12.65,1.69-8.85,5.9-8.85,5.9S256.58,89.35,247.73,101.15Z"
+                    style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 301.569px 123.863px;"
+                    id="el4627irkjhoa" class="animable"></path>
+                <path
+                    d="M299.57,75.86s8.43-6.32,15.18-8,25.71,2.53,32.45,6.32,22.77,37.94,25.72,48.9-3.8,29.51-4.22,40.46,13.49,48.06,15.18,52.69,2.1,4.64-8,10.54S339.62,239,333.29,241.09,320.23,227.6,316,212.43s-2.95-32,1.27-54.37,7.16-42.58,5.05-59.44S308,75,299.57,75.86Z"
+                    style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 342.189px 154.38px;"
+                    id="elbo8ilkluos" class="animable"></path>
+                <path d="M293.25,77.12a42.23,42.23,0,0,1,16,24c3.79,16,8.85,24,12.64,27"
+                    style="fill: none; stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 307.57px 102.62px;"
+                    id="elarg2jjvpv57" class="animable"></path>
+                <path d="M271.75,84.71s29.62,9.61,41.84,29.84"
+                    style="fill: none; stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 292.67px 99.63px;"
+                    id="elomob0l4oarh" class="animable"></path>
+                <g id="elbkp41crmh4l">
+                    <ellipse cx="125.64" cy="183.31" rx="16.66" ry="39.12"
+                        style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 125.64px 183.31px; transform: rotate(-19.85deg);"
+                        class="animable"></ellipse>
+                </g>
+                <g id="elldhrvgu4j3o">
+                    <ellipse cx="127.46" cy="182.95" rx="16.66" ry="39.12"
+                        style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 127.46px 182.95px; transform: rotate(-19.85deg);"
+                        class="animable"></ellipse>
+                </g>
+                <line x1="127.32" y1="197.43" x2="127.16" y2="200.76"
+                    style="fill: none; stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-miterlimit: 10; transform-origin: 127.24px 199.095px;"
+                    id="el6c2x6a6r0if" class="animable"></line>
+                <line x1="129.35" y1="156.07" x2="127.53" y2="193.2"
+                    style="fill: none; stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-miterlimit: 10; transform-origin: 128.44px 174.635px;"
+                    id="elfl2tics7sdr" class="animable"></line>
+                <line x1="124.53" y1="166.15" x2="123.22" y2="189.8"
+                    style="fill: none; stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-miterlimit: 10; transform-origin: 123.875px 177.975px;"
+                    id="el8yh69rbjjp4" class="animable"></line>
+                <line x1="142.68" y1="211.44" x2="142.49" y2="213.46"
+                    style="fill: none; stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-miterlimit: 10; transform-origin: 142.585px 212.45px;"
+                    id="elpuoids6f29" class="animable"></line>
+                <line x1="144.25" y1="194.62" x2="143.1" y2="206.9"
+                    style="fill: none; stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-miterlimit: 10; transform-origin: 143.675px 200.76px;"
+                    id="elr39mtzu86l8" class="animable"></line>
+                <polygon points="138.93 220.11 150.95 253.44 158.4 249.07 142 218.95 138.93 220.11"
+                    style="fill: rgb(38, 50, 56); stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 148.665px 236.195px;"
+                    id="elq3enx4g5iqe" class="animable"></polygon>
+                <path
+                    d="M224.9,326s-31.52-17.75-39.12-27.16a157,157,0,0,1-10.51-14.13s-2.53-20.29-3.62-26.44-9.06-18.48-10.51-22.83a62.18,62.18,0,0,1-2.53-11.59c-.36-2.9-4.35-2.17-6.16,1.81s1.09,10.87,1.45,13.41a30.64,30.64,0,0,0,1.45,5.43s-10.87-10.14-12-10.87-3.62-.72-4.34,3.26,2.53,9.06,2.53,9.06-5.43,4-5.43,6.52a47.22,47.22,0,0,0,.72,6.52s-2.53,8.69-2.17,10.87,3.62,8.69,3.62,8.69-4,.36-5.07-.72-3.62-6.89-5.07-5.44-.72,6.89,0,8.7,4,1.81,6.16,4.34,11.95,2.9,13.76,4,21.74,21,31.16,30.06,36.58,35.87,38.39,39.13,6.89,7.24,6.89,7.24Z"
+                    style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 176.102px 293.974px;"
+                    id="eljq83jpt1se" class="animable"></path>
+                <line x1="155.35" y1="244.53" x2="164.77" y2="252.86"
+                    style="fill: none; stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 160.06px 248.695px;"
+                    id="elezhhnmii74w" class="animable"></line>
+                <line x1="141.58" y1="245.98" x2="147.38" y2="255.4"
+                    style="fill: none; stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 144.48px 250.69px;"
+                    id="el1kbzbun2ud4" class="animable"></line>
+                <line x1="136.87" y1="259.02" x2="141.58" y2="267.71"
+                    style="fill: none; stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 139.225px 263.365px;"
+                    id="elo00gwsrju88" class="animable"></line>
+                <path
+                    d="M333.21,264.45l-58,68.83s-4.71-2.17-6.52-.36a14.31,14.31,0,0,0-2.54,3.26l-10.5-2.9s-23.91-10.87-28.62-10.87-6.16.73-6.16,2.54.37,69.91.37,74.62.36,9.06,6.52,11.23,25.72,5.43,31.15,5.07,9.78-3.62,11.23-6.52,1.45-15.21,1.45-15.21,15.21,1.81,26.08-7.25,45.64-60.13,50.71-67,16.3-24.64,19.56-31.16"
+                    style="fill: rgb(244, 218, 203); stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 294.405px 340.174px;"
+                    id="elgnp963nfrc" class="animable"></path>
+                <path
+                    d="M259.91,334.44l-4.22-1.16s-23.91-10.87-28.62-10.87-6.16.73-6.16,2.54.37,69.91.37,74.62.36,9.06,6.52,11.23,25.72,5.43,31.15,5.07,9.78-3.62,11.23-6.52,1.45-15.21,1.45-15.21-4-44.92-11.23-59.05Z"
+                    style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 246.27px 369.154px;"
+                    id="elbmbvlghvxd6" class="animable"></path>
+                <path d="M351.68,315.53s11.23-8.33,15.58-16.3"
+                    style="fill: none; stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 359.47px 307.38px;"
+                    id="elxzgexdj1di" class="animable"></path>
+                <path d="M281.86,356.08c.35.83.68,1.68,1,2.56"
+                    style="fill: none; stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 282.36px 357.36px;"
+                    id="elgozc1e70w3a" class="animable"></path>
+                <path d="M266.19,336.18a45.92,45.92,0,0,1,14,16.37"
+                    style="fill: none; stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 273.19px 344.365px;"
+                    id="el16hlman8x5c" class="animable"></path>
+                <path d="M276.34,335.09s7.24,4.71,9.41,10.87"
+                    style="fill: none; stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 281.045px 340.525px;"
+                    id="elerpfffua4fh" class="animable"></path>
+                <path
+                    d="M271.22,170.16c-.35,0-.49-.07-.52-.17,2.48-1.24,4.39-2.65,5.13-4,2.28-4.17-2.65-6.45-6.82-5.31,0,0-11.25,2.3-16.94,4.58s-6.58,7.17,1,8.31c.46.07.93.12,1.43.15l-.17,0,.38,0a26.42,26.42,0,0,0,5-.31c.81,0,1.24.1.76.34-1.53.77-4.86,2.81-.25,3.33s15.34-3.84,16.36-5.12S272.76,170.16,271.22,170.16Z"
+                    style="fill: rgb(244, 218, 203); transform-origin: 262.157px 168.755px;" id="el6bzuxerai34"
+                    class="animable"></path>
+                <g id="eljtg1mciv1ws">
+                    <path
+                        d="M271.22,170.16c-.35,0-.49-.07-.52-.17,2.48-1.24,4.39-2.65,5.13-4,2.28-4.17-2.65-6.45-6.82-5.31,0,0-11.25,2.3-16.94,4.58s-6.58,7.17,1,8.31c.46.07.93.12,1.43.15l-.17,0,.38,0a26.42,26.42,0,0,0,5-.31c.81,0,1.24.1.76.34-1.53.77-4.86,2.81-.25,3.33s15.34-3.84,16.36-5.12S272.76,170.16,271.22,170.16Z"
+                        style="fill: rgb(255, 255, 255); opacity: 0.6; transform-origin: 262.157px 168.755px;"
+                        class="animable"></path>
+                </g>
+            </g>
+            <g id="freepik--Table--inject-2" class="animable" style="transform-origin: 252.665px 449.2px;">
+                <line x1="29" y1="449.2" x2="476.33" y2="449.2"
+                    style="fill: none; stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 252.665px 449.2px;"
+                    id="eldy90pf33wn6" class="animable"></line>
+            </g>
+            <g id="freepik--Bottles--inject-2" class="animable" style="transform-origin: 110.853px 411.168px;">
+                <path d="M176.65,456h-14a3.36,3.36,0,0,1-3.35-3L153,390h33.34L180,453A3.36,3.36,0,0,1,176.65,456Z"
+                    style="fill: rgb(244, 218, 203); stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 169.67px 423px;"
+                    id="eln7e1z06p9l" class="animable"></path>
+                <rect x="161.57" y="456.02" width="15.94" height="5.98"
+                    style="fill: rgb(38, 50, 56); stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 169.54px 459.01px;"
+                    id="el0sn0m62pk2o" class="animable"></rect>
+                <rect x="91.02" y="426.33" width="54.33" height="35.67" rx="5"
+                    style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 118.185px 444.165px;"
+                    id="el35mvui6dz9a" class="animable"></rect>
+                <rect x="93.18" y="433.5" width="35.9" height="17.23"
+                    style="fill: rgb(38, 50, 56); stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 111.13px 442.115px;"
+                    id="el10hor8reoxg" class="animable"></rect>
+                <rect x="96.02" y="418.33" width="44.67" height="8"
+                    style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 118.355px 422.33px;"
+                    id="el0ti35289v8" class="animable"></rect>
+                <line x1="96.69" y1="423" x2="121.02" y2="418.33"
+                    style="fill: none; stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 108.855px 420.665px;"
+                    id="elkhumnhrona" class="animable"></line>
+                <line x1="106.02" y1="426.67" x2="135.02" y2="418.67"
+                    style="fill: none; stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 120.52px 422.67px;"
+                    id="elgy098yy0kz" class="animable"></line>
+                <line x1="129.69" y1="426.67" x2="140.36" y2="422"
+                    style="fill: none; stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 135.025px 424.335px;"
+                    id="elvgnra7rg3m" class="animable"></line>
+                <rect x="58.12" y="362.56" width="4.12" height="4.34"
+                    style="fill: rgb(244, 218, 203); stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 60.18px 364.73px;"
+                    id="ela5lkle4kyw" class="animable"></rect>
+                <rect x="56.17" y="366.47" width="8.24" height="1.95"
+                    style="fill: rgb(244, 218, 203); stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 60.29px 367.445px;"
+                    id="eljulnz346xmb" class="animable"></rect>
+                <path
+                    d="M86,400.28A22.86,22.86,0,0,0,69.6,380.14l-2.28-.66-5.13-.62H59.73l-5.13.62-2.28.66a22.87,22.87,0,0,0-16.43,20.14,154.89,154.89,0,0,0,.35,29.15c1.13,9.59,2.78,19.14,4.57,24.75A11.26,11.26,0,0,0,51.54,462H70.39a11.26,11.26,0,0,0,10.72-7.82c1.79-5.61,3.44-15.16,4.57-24.75A154.06,154.06,0,0,0,86,400.28Z"
+                    style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 60.9534px 420.43px;"
+                    id="el1yyd2p31ium" class="animable"></path>
+                <rect x="54.6" y="370.38" width="11.39" height="9.11"
+                    style="fill: rgb(244, 218, 203); stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 60.295px 374.935px;"
+                    id="eln7zf0e7cgre" class="animable"></rect>
+                <rect x="53.79" y="367.55" width="13.01" height="9.11"
+                    style="fill: rgb(244, 218, 203); stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 60.295px 372.105px;"
+                    id="elv2nqgwrmzie" class="animable"></rect>
+                <path d="M54.87,364.3s12.15-.22,17.35.43l-.22-2s-8.45-2.6-11.71-2.38-6.58.44-5.5,3.69Z"
+                    style="fill: rgb(244, 218, 203); stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 63.401px 362.533px;"
+                    id="el87gzr3dnlvb" class="animable"></path>
+                <ellipse cx="60.34" cy="418.97" rx="16.95" ry="28.47"
+                    style="fill: rgb(244, 218, 203); stroke: rgb(38, 50, 56); stroke-miterlimit: 10; transform-origin: 60.34px 418.97px;"
+                    id="elqort25g49q" class="animable"></ellipse>
+            </g>
+            <g id="freepik--Plant--inject-2" class="animable" style="transform-origin: 423.19px 405.18px;">
+                <path
+                    d="M412.16,405.19a25,25,0,0,1-10-5.94,29,29,0,0,0-6.89-5.18c-5.48-2.75-16.92-5-16.92-5s10.06-2.29,17.84-.46,13.26,9.6,13.26,9.6-2.29-3.2-5.49-12.8-3.2-30.19-3.2-30.19,7.78,8.69,11.43,19.21a96.12,96.12,0,0,1,4.58,19.67s-.92-16,1.83-25.16,10.52-20.58,10.52-20.58.45,20.13-2.75,31.1-4.57,16-4.57,16a39.33,39.33,0,0,1,9.6-15.09c6.86-6.41,23.33-11.89,23.33-11.89S447,382.63,442,387.21s-10.06,9.6-10.06,9.6,5.49-4.12,15.09-4.12,21,6.41,21,6.41-24.45-.15-33.45,4a23.11,23.11,0,0,1-5.69,1.91l-5,.88a24.85,24.85,0,0,1-11.77-.75Z"
+                    style="fill: rgb(244, 218, 203); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 423.19px 377.317px;"
+                    id="elqpvfucsmqo" class="animable"></path>
+                <line x1="412.05" y1="400.77" x2="406.42" y2="396.87"
+                    style="fill: none; stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 409.235px 398.82px;"
+                    id="el48yvf72acv9" class="animable"></line>
+                <line x1="418.12" y1="403.8" x2="410.32" y2="383"
+                    style="fill: none; stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 414.22px 393.4px;"
+                    id="el9oergm1mmd8" class="animable"></line>
+                <line x1="418.12" y1="403.8" x2="422.45" y2="376.06"
+                    style="fill: none; stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 420.285px 389.93px;"
+                    id="elo1jbyu1567k" class="animable"></line>
+                <line x1="418.12" y1="403.8" x2="432.86" y2="385.6"
+                    style="fill: none; stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 425.49px 394.7px;"
+                    id="elvifmn8v1koi" class="animable"></line>
+                <line x1="421.2" y1="403.44" x2="436.76" y2="396.43"
+                    style="fill: none; stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 428.98px 399.935px;"
+                    id="el8xf3ipie7l" class="animable"></line>
+                <path d="M434.5,462H401.62a5.18,5.18,0,0,1-5.16-5.58l4-51h35.26l4,51A5.18,5.18,0,0,1,434.5,462Z"
+                    style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 418.09px 433.71px;"
+                    id="elap14bql585t" class="animable"></path>
+                <path
+                    d="M414.16,434.34c-.78,11.19-4.12,20.07-7.45,19.83s-5.4-9.49-4.62-20.67,4.11-20.07,7.44-19.84S414.94,423.15,414.16,434.34Z"
+                    style="fill: none; stroke: rgb(244, 218, 203); stroke-miterlimit: 10; transform-origin: 408.125px 433.915px;"
+                    id="elt0x1qfb954s" class="animable"></path>
+                <path
+                    d="M420.23,434.34c.78,11.19,4.12,20.07,7.45,19.83s5.4-9.49,4.62-20.67-4.11-20.07-7.44-19.84S419.45,423.15,420.23,434.34Z"
+                    style="fill: none; stroke: rgb(244, 218, 203); stroke-miterlimit: 10; transform-origin: 426.265px 433.915px;"
+                    id="el4fro9fc4bd2" class="animable"></path>
+            </g>
+            <defs>
+                <filter id="active" height="200%">
+                    <feMorphology in="SourceAlpha" result="DILATED" operator="dilate" radius="2"></feMorphology>
+                    <feFlood flood-color="#32DFEC" flood-opacity="1" result="PINK"></feFlood>
+                    <feComposite in="PINK" in2="DILATED" operator="in" result="OUTLINE"></feComposite>
+                    <feMerge>
+                        <feMergeNode in="OUTLINE"></feMergeNode>
+                        <feMergeNode in="SourceGraphic"></feMergeNode>
+                    </feMerge>
+                </filter>
+                <filter id="hover" height="200%">
+                    <feMorphology in="SourceAlpha" result="DILATED" operator="dilate" radius="2"></feMorphology>
+                    <feFlood flood-color="#ff0000" flood-opacity="0.5" result="PINK"></feFlood>
+                    <feComposite in="PINK" in2="DILATED" operator="in" result="OUTLINE"></feComposite>
+                    <feMerge>
+                        <feMergeNode in="OUTLINE"></feMergeNode>
+                        <feMergeNode in="SourceGraphic"></feMergeNode>
+                    </feMerge>
+                    <feColorMatrix type="matrix"
+                        values="0   0   0   0   0                0   1   0   0   0                0   0   0   0   0                0   0   0   1   0 ">
+                    </feColorMatrix>
+                </filter>
+            </defs>
+        </svg>
+    </div>
+
+    <%- include("../layout/footer") -%>

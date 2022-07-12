@@ -1,0 +1,85 @@
+<%- include("../../layout/navbar") -%>
+
+    <div class="bill">
+        <p class="title">تم ارسال طلبك بنجاح</p>
+        <div class="bill-paper" id="dvContents">
+            <div class="bill-bg">
+            </div>
+            <p class="title">بوتيك الخاتونة</p>
+            <div class="slide"></div>
+            <div class="info">
+                <p>معلومات الزبون : </p>
+                <table class="info-table table-bordered">
+                    <tr>
+                        <th>اسم الزبون</th>
+                        <th>رقم الهاتف</th>
+                        <th>المحافظة</th>
+                        <th>التاريخ</th>
+                    </tr>
+
+                    <tr>
+                        <td><%= data.name%></td>
+                        <td><%= data.phone%></td>
+                        <td><%= data.location%></td>
+                        <td><%= data.Date%></td>
+                    </tr>
+                </table>
+                <p class="order-title">المنتجات المطلوبة</p>
+            <table class="info-table table-bordered">
+                <tr>
+                    <td>الصورة</td>
+                    <th>المنتج</th>
+                    <th>العدد</th>
+                    <th>سعر القطعة</th>
+                    <th>السعر النهائي</th>
+                </tr>
+
+                <% data.order.forEach(element => {%>
+                    <tr>
+                        <td><img src="/upload/images/<%= element.image%>" alt=""></td>
+                        <td><%= element.name%></td>
+                        <td><%= element.qty%></td>
+                        <td><%= element.price%></td>
+                        <td id="price"><%= element.price * element.qty%></td>
+                    </tr>
+                <%}) %>
+                <tr>
+                    <td colspan="3">المجموع</td>
+                    <td colspan="3" id="total_price"></td>
+                </tr>
+                <tr>
+                    <td colspan="3">توصيل الى <%= data.location%></td>
+                    <% if(data.location == "بغداد"){%>
+                    <td colspan="3" id="tax">5000</td>
+                        
+                        <%} else {%>
+                            <td colspan="3" id="tax">8000</td>
+                        <%} %>
+                </tr>
+                <tr>
+                    <td colspan="5" id="total_td"></td>
+                </tr>
+            </table>
+            <p class="bill-des">يرجى تفقد الطلب قبل مغادره المندوب<br>
+                وبخلاف ذلك يتحمل الزبون كلفة التوصيل الثاني ( التعديل )<br>
+                في حالة وجود خلل في الطلبية يتم التواصل معنا مباشرة وعدم استلامها .</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var total = document.querySelectorAll("#price")
+        var tax = document.getElementById("tax").innerHTML
+    var array = []
+
+    for (let index = 0; index < total.length; index++) {
+      var element = array.push(Number(total[index].innerHTML));
+
+    }
+
+    var i = array.reduce((a, b) => a + b,)
+    document.getElementById("total_td").innerHTML = "المبلغ الكلي : " + (i +Number(tax)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " دينار عراقي"
+    document.getElementById("total_price").innerHTML = i.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+    </script>
+
+    <%- include("../../layout/footer") -%>

@@ -1,0 +1,57 @@
+<%- include("../layout/navbar") -%>
+
+<div class="category-media">
+    <div class="side-nav-cat">
+        <% sideCategory.forEach(data => { %>
+            <a href="/category/<%= cat %>/<%= data.name%>"><%= data.name%></a>
+        <%}) %>
+      </div>
+      <br>
+      <div class="index flex">
+      
+      <% products.forEach(data => {%>
+
+        <div class="card" onclick="window.location.href='/product/get/<%= data.id%>'">
+            <img src="/upload/images/<%= data.image%>">
+            <% if(data.isStock == false){%>
+                <p class="out-stock">المنتج غير متوفر</p>
+            <%} %>
+            <p class="card-name">
+                <%= data.name%>
+            </p>
+            <p class="card-description">
+                <%= data.minDes%>
+            </p>
+            <p class="card-price">
+                <%= data.price%><span>IQD</span>
+            </p>
+        </div>
+        
+    <% })%>
+
+    <script>
+        function addCart(id) {
+            const res = fetch(`http://localhost:3000/cart/data/${id}`, {
+                headers: { "Content-type": "application/json" }
+            })
+                .then(res => res.json())
+                .then(res => {
+                    const prevData = JSON.parse(localStorage.getItem('cart_products')) || [];
+                    if (prevData.findIndex(data => data._id === id) > -1) {
+                        Swal.fire(
+                            'تمت اضافة المنتج مسبقا',
+                            'تمت اضافة المنتج الى السلة مسبقا',
+                            'error'
+                        )
+                        return;
+                    }
+                    prevData.push({ _id:res._id, qty: 1 });
+                    localStorage.setItem('cart_products', JSON.stringify(prevData))
+                })
+                .catch(err => console.log(err))
+        }
+    </script>
+</div>
+</div>
+
+<%- include("../layout/footer") -%>

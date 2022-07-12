@@ -1,0 +1,31 @@
+<%- include("../../layout/admin-navbar") -%>
+<% if(suc.length > 0){%>
+    <script>
+        Swal.fire(
+            'تم النقل الى سجل الفواتير',
+            'تم نقل الطلب الى سجل الفواتير',
+            'success'
+        )
+    </script>
+<%} %>
+
+<% if(ret.length > 0){%>
+    <script>
+        Swal.fire(
+            'تم النقل الى الطلبات المعادة',
+            'تم نقل الطلب الى قائمة الطلبات المعادة',
+            'success'
+        )
+    </script>
+<%} %>
+<p class="order-title">الطلبات المقبولة</p>
+    <div class="pending-orders">
+
+        <% orders.forEach(data => {%>
+            <div class="folders" onclick="window.location.href='/admin/bills/get/<%= data.id%>'">
+                <ion-icon class="folder icon" name="folder"></ion-icon>
+                <p><%= data.name%></p>
+            </div>
+        <%}) %>
+    </div>
+    <%- include("../../layout/footer") -%>

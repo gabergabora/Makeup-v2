@@ -1,0 +1,106 @@
+<%- include("../../layout/navbar") -%>
+
+    <% if(add.length> 0){%>
+        <script>
+            Swal.fire(
+                'تمت اضافة المنتج الى السلة',
+                '',
+                'success'
+            )
+        </script>
+        <%} %>
+
+            <p class="name-of-product">
+                <%= data.name%>
+            </p>
+            <div class="porduct-media">
+
+                <img src="/upload/images/<%= data.image%>" alt="">
+                <div class="info">
+                    <p class="des">
+                        <%= data.des%>
+                    </p>
+                    <p class="brand">الماركة : <%= data.brand%>
+                    </p>
+                    <% if(product.colors.length> 0){%>
+                        <p class="colors">
+                        <p class="colors"><span class="dot"
+                                onclick="window.location.href='/product/get/<%= product.id %>'"
+                                style="background-color: <%= product.color%>"></span>
+                            <% product.colors.forEach(fork=> {%>
+                                <span class="dot"
+                                    onclick="window.location.href='/product/get-colored/<%= fork.colorID %>'"
+                                    style="background-color: <%= fork.color%>"></span>
+                                <%}) %>
+                        </p>
+                        <%} %>
+                        <% if(userDATA){%>
+                            <form action="/cart/add/<%= data.id%>?_method=PUT" method="post">
+                            <% if(product.size.length> 0){%>
+                                <label>الحجم : </label>
+                                <select name="size">
+                                    <% product.size.forEach(fork=> {%>
+                                        <option>
+                                            <%= fork.size%>
+                                        </option>
+                                        <%}) %>
+                                </select>
+                                <%} %>
+                                    <br>
+                                    <p class="price"> السعر : <%= data.price%><span>IQD</span></p>
+
+                                            <button class="add-cart">اضافة الى السلة</button>
+                                        </form>
+                                        <%} else {%>
+                                            <% if(product.size.length> 0){%>
+                                                <label>الحجم : </label>
+                                                <select name="size">
+                                                    <% product.size.forEach(fork=> {%>
+                                                        <option>
+                                                            <%= fork.size%>
+                                                        </option>
+                                                        <%}) %>
+                                                </select>
+                                                <%} %>
+                                                    <br>
+                                                    <p class="price"> السعر : <%= data.price%><span>IQD</span></p>
+                                            <button class="add-cart" onclick="addCart('<%= data.id%>')">اضافة الى
+                                                السلة</button>
+                                            <%}%>
+                </div>
+            </div>
+            <br>
+
+            <br>
+
+            <script>
+                function addCart(id) {
+                    const res = fetch(`http://localhost:3000/cart/data/${id}`, {
+                        headers: { "Content-type": "application/json" }
+                    })
+                        .then(res => res.json())
+                        .then(res => {
+                            const prevData = JSON.parse(localStorage.getItem('cart_products')) || [];
+                            if (prevData.findIndex(data => data._id === id) > -1) {
+                                Swal.fire(
+                                    'تمت اضافة المنتج مسبقا',
+                                    'تمت اضافة المنتج الى السلة مسبقا',
+                                    'error'
+                                )
+                                return;
+                            }
+                            prevData.push({ _id: res._id, qty: 1 });
+                            localStorage.setItem('cart_products', JSON.stringify(prevData))
+                            Swal.fire(
+                                'تمت اضافة المنتج الى السلة',
+                                '',
+                                'success'
+                            )
+                            var e = document.getElementById("size")
+                            var strUser = e.value;
+                            localStorage.setItem('size', strUser)
+                        })
+                        .catch(err => console.log(err))
+                }
+            </script>
+            <%- include("../../layout/footer") -%>

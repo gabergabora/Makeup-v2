@@ -1,0 +1,121 @@
+<%- include("../../layout/navbar") -%>
+
+<% if(userDATA.cart.length == 0){%>
+  <h2 style="text-align:center; margin-top: 30px">سلة التسوق فارغة</h2>
+<%} else {%>
+  <div class="cart">
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th scope="col">الصورة</th>
+          <th scope="col">الاسم</th>
+          <th scope="col">الماركة</th>
+          <th scope="col">العدد</th>
+          <th scope="col">سعر القطعة الواحدة</th>
+          <th scope="col">السعر النهائي</th>
+          <th scope="col">حذف</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(let i=0; i < userDATA.cart.length; i++) {%>
+          <tr>
+            <td><img src="/upload/images/<%= userDATA.cart[i].image%>"></td>
+            <% if( userDATA.cart[i].size === undefined ){%>
+              
+              <td>
+                <%= userDATA.cart[i].name %>
+              </td>
+              <%} else {%>
+                <td>
+                  <%= userDATA.cart[i].name + `(${userDATA.cart[i].size})` %>
+                </td>
+                <%} %>
+            <td>
+              <%= userDATA.cart[i].brand%>
+            </td>
+            <td class="qty"><span name="qty">
+                <%= userDATA.cart[i].qty%>
+              </span>
+              <div class="btns-qty">
+                <form action="/cart/plus/<%= userDATA.cart[i].id%>?_method=PUT" method="post">
+                  <button>+</button>
+                </form>
+                <form action="/cart/min/<%= userDATA.cart[i].id%>?_method=PUT" method="post">
+                  <button>-</button>
+                </form>
+
+              </div>
+            </td>
+            <td>
+              <%= userDATA.cart[i].price%>
+            </td>
+            <td id="price">
+              <%= userDATA.cart[i].qty * userDATA.cart[i].price%>
+            </td>
+            <td>
+              <form action="/cart/delete/<%= userDATA.cart[i].id%>?_method=PUT" method="post">
+                <button class="delete"><svg xmlns="http://www.w3.org/2000/svg"
+                    class="icon icon-tabler icon-tabler-trash" width="20" height="20" viewBox="0 0 24 24"
+                    stroke-width="2" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <line x1="4" y1="7" x2="20" y2="7" />
+                    <line x1="10" y1="11" x2="10" y2="17" />
+                    <line x1="14" y1="11" x2="14" y2="17" />
+                    <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                    <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                  </svg></button>
+              </form>
+            </td>
+          </tr>
+          <%}%>
+            <tr>
+              <td colspan="7" id="total_td"></td>
+            </tr>
+      </tbody>
+    </table>
+
+    <div class="informations">
+      <p>معلومات الطلبية</p>
+      <form action="/cart/bill" method="post">
+        <label for="">المحافظة : </label><input type="text" name="location" value="<%= userDATA.location%>">
+        <br>
+        <label for="">المنطقة : </label><input type="text" name="area" value="<%= userDATA.area%>">
+        <br>
+        <label for="">رقم الهاتف : </label><input type="text" name="phone" value="<%= userDATA.phone%>">
+        <br>
+
+        <button>تاكيد الشراء <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-ambulance"
+          width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <circle cx="7" cy="17" r="2" />
+          <circle cx="17" cy="17" r="2" />
+          <path d="M5 17h-2v-11a1 1 0 0 1 1 -1h9v12m-4 0h6m4 0h2v-6h-8m0 -5h5l3 5" />
+          <path d="M6 10h4m-2 -2v4" />
+        </svg></button>
+      </form>
+    </div>
+  </div>
+<%} %>
+
+  
+
+  <script>
+    var total = document.querySelectorAll("#price")
+    var array = []
+
+    for (let index = 0; index < total.length; index++) {
+      var element = array.push(Number(total[index].innerHTML));
+
+    }
+
+    console.log(array)
+
+
+
+    console.log(array.reduce((a, b) => a + b,))
+    document.getElementById("total_td").innerHTML = "المبلغ الكلي : " + array.reduce((a, b) => a + b,).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " دينار عراقي"
+
+  </script>
+
+  <%- include("../../layout/footer") -%>

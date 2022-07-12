@@ -1,0 +1,148 @@
+<%- include("../layout/navbar") -%>
+
+    <% if(addError.length> 0){%>
+        <script>
+            Swal.fire(
+                'تمت اضافة المنتج مسبقا',
+                'تمت اضافة المنتج الى السلة مسبقا',
+                'error'
+            )
+        </script>
+        <%} %>
+
+        <% if(add.length> 0){%>
+            <script>
+                Swal.fire(
+                    'تمت اضافة المنتج الى السلة',
+                    '',
+                    'success'
+                )
+            </script>
+            <%} %>
+
+            <div class="index">
+                <% preview.forEach(element=> {%>
+                    
+                    <div class="pre-tools">
+                        <p class="preview-des">
+                            <%= element.des%>
+                        </p>
+                        <br>
+                        <button class="preview-morev2"
+                            onclick="window.location.href='/category/<%= element.category%>/all'">شاهد المزيد</button>
+                            <p class="preview-titlev2">
+                                <%= element.title%>
+                            </p>
+                    </div>
+                    <div class="scrollmenu owl-carousel owl-theme">
+                        <% product.forEach(data=> {%>
+                            <% if(element.category==data.mainCategory) {%>
+                                <% if(element.type=="card" ){%>
+                                    <div class="item">
+                                        <div class="card" onclick="window.location.href='/product/get/<%= data.id%>'">
+                                            <img src="/upload/images/<%= data.image%>">
+                                            <% if(data.isStock == false){%>
+                                                <p class="out-stock">المنتج غير متوفر</p>
+                                            <%} %>
+                                            <p class="card-name">
+                                                <%= data.name%>
+                                            </p>
+                                            <p class="card-description">
+                                                <%= data.minDes%>
+                                            </p>
+                                            <p class="card-price">
+                                                <%= data.price%><span>IQD</span>
+                                            </p>
+                                            <div class="btns" style="display:none">
+                                                <button class="card-show" onclick="window.location.href='/product/get/<%= data.id%>'">المزيد من المعلومات</button>
+                                                <% if(userDATA){%>
+                                                    <% if(data.isStock == true){%>
+                                                        <form action="/cart/add/<%= data.id%>?_method=PUT" method="post">
+                                                            <button class="card-add">اضافة الى السلة</button>
+                                                        </form>
+                                                    <%} %>
+                                                    
+                                                    <%}else {%>
+                                                        <button onclick="addCart('<%= data.id%>')">Add to
+                                                            cart</button>
+                                                        <%} %>
+                                            </div>
+                                        </div>
+                                        <br>
+                                    </div>
+                                    <%} %>
+                                        <%}%>
+                                            <%}) %>
+                    </div>
+                    <% if(element.type=="image" ){%>
+                        <div class="wide-img" onclick="window.location.href='/category/<%= element.category%>/all'">
+                            <center><img src="/upload/images/<%= element.image%>" alt=""></center>
+                        </div>
+                        <% } %>
+                            <%}); %>
+            </div>
+            <p style="font-size: 20px; text-align: center; margin-top:
+            30px;">الماركات</p>
+            <div class="brand-user">
+                <% brand.forEach(data => { %>
+                    <div class="card" onclick="window.location.href='/get-brand/<%= data.name%>'">
+                        <img src="/upload/images/<%= data.image%>" alt="">
+                        <p><%= data.name%></p>
+                    </div>
+                <%}) %>
+            </div>
+
+
+
+            <script>$('.owl-carousel').owlCarousel({
+                    rtl: true,
+                    loop: true,
+                    margin: 0,
+                    nav: false,
+                    responsive: {
+                        0: {
+                            items: 2.5
+                        },
+                        1000: {
+                            items: 6.5
+                        },
+                        1500: {
+                            items: 8
+                        },
+
+                        2000: {
+                            items: 9
+                        }
+                    }
+                })</script>
+
+            <script>
+                function addCart(id) {
+                    const res = fetch(`http://localhost:3000/cart/data/${id}`, {
+                        headers: { "Content-type": "application/json" }
+                    })
+                        .then(res => res.json())
+                        .then(res => {
+                            const prevData = JSON.parse(localStorage.getItem('cart_products')) || [];
+                            if (prevData.findIndex(data => data._id === id) > -1) {
+                                Swal.fire(
+                                    'تمت اضافة المنتج مسبقا',
+                                    'تمت اضافة المنتج الى السلة مسبقا',
+                                    'error'
+                                )
+                                return;
+                            }
+                            prevData.push({ _id:res._id, qty: 1 });
+                            localStorage.setItem('cart_products', JSON.stringify(prevData))
+                        })
+                        .catch(err => console.log(err))
+                }
+            </script>
+
+            <script type="text/javascript"
+                src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script type="text/javascript"
+                src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
+
+
+            <%- include("../layout/footer") -%>

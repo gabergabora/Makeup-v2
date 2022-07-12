@@ -1,0 +1,28 @@
+<%- include("../layout/navbar") -%>
+
+<div class="category-media">
+      <div class="index flex">
+      
+      <% products.forEach(data => {%>
+
+        <div class="card" onclick="window.location.href='/product/get/<%= data.id%>'">
+            <img src="/upload/images/<%= data.image%>">
+            <% if(data.isStock == false){%>
+                <p class="out-stock">المنتج غير متوفر</p>
+            <%} %>
+            <p class="card-name">
+                <%= data.name%>
+            </p>
+            <p class="card-description">
+                <%= data.minDes%>
+            </p>
+            <p class="card-price">
+                <%= data.price%><span>IQD</span>
+            </p>
+        </div>
+        
+    <% })%>
+</div>
+</div>
+
+<%- include("../layout/footer") -%>
